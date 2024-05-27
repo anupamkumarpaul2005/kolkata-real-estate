@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor - Kolkata</title>
+</head>
+<body>
+    <header>
+        <p>House Price Predictor</p>
+        <p>Kolkata</p>
+    </header>
+    <form>
+        <div class="query">
+            <label for="area">Area</label>
+            <input type="number" name="area" id="area-inp">
+        </div>
+        <div class="query">
+            <label for="furnishing">Furnishing</label>
+            <select name="furnishing" id="furnishing">
+                <option value="s">T</option>
+                <option value="x">A</option>
+                <option value="y">H</option>
+            </select>
+        </div>
+        <div class="query">
+            <label for="bhk">BHK</label>
+            <input type="number" name="bhk" id="bhk-inp">
+        </div>
+        <div class="query">
+            <label for="location">Location</label>
+            <select name="location" id="location-inp">
+                <option value="s">S</option>
+                <option value="x">X</option>
+                <option value="y">Y</option>
+            </select>
+        </div>
+        <div class="query">
+            <label for="type"> Type</label>
+            <select name="type" id="type-inp">
+                <option value="s">N</option>
+                <option value="x">p</option>
+                <option value="y">o</option>
+            </select>
+        </div>
+        
+        <input type="submit" value="submit">
+    </form>
+    <p id="price-label"></p>
+    <p id="price"></p>
+</body>
+</html>
