@@ -1,4 +1,4 @@
-from flask import Flask, request, json
+from flask import Flask, request
 import numpy as np
 import util
 
