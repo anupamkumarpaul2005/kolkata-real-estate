@@ -4,49 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Price Predictor - Kolkata</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="img"></div>
     <header>
-        <p>House Price Predictor</p>
-        <p>Kolkata</p>
+        <p id="header1">House Price Predictor</p>
+        <p id="header2">Kolkata</p>
     </header>
     <form>
         <div class="query">
-            <label for="area">Area</label>
-            <input type="number" name="area" id="area-inp">
+            <label for="area">Area:</label>
+            <input type="number" min="100" max="50000" value="1000" name="area" id="area-inp">
         </div>
         <div class="query">
-            <label for="furnishing">Furnishing</label>
+            <label for="furnishing">Furnishing:</label>
             <select name="furnishing" id="furnishing">
+                <option value="" selected disabled hidden>Please select the Furnishing</option>
                 <option value="s">T</option>
                 <option value="x">A</option>
                 <option value="y">H</option>
             </select>
         </div>
         <div class="query">
-            <label for="bhk">BHK</label>
-            <input type="number" name="bhk" id="bhk-inp">
+            <label for="bhk">BHK:</label>
+            <input type="number" min="1" max="10" value="2" name="bhk" id="bhk-inp">
         </div>
         <div class="query">
-            <label for="location">Location</label>
+            <label for="location">Location:</label>
             <select name="location" id="location-inp">
+                <option value="" selected disabled hidden>Please select the Location</option>
                 <option value="s">S</option>
                 <option value="x">X</option>
                 <option value="y">Y</option>
             </select>
         </div>
         <div class="query">
-            <label for="type"> Type</label>
+            <label for="type"> Type of House:</label>
             <select name="type" id="type-inp">
+                <option value="" selected disabled hidden>Please select the Type</option>
                 <option value="s">N</option>
                 <option value="x">p</option>
                 <option value="y">o</option>
             </select>
         </div>
         
-        <input type="submit" value="submit">
+        <button type="button" onclick="" class="submit">Submit</button>
     </form>
-    <p id="price-label"></p>
-    <p id="price"></p>
+    <div class="prediction">
+        <div id="price-label">Predicted Price</div>
+        <div id="price">0000</div>
+    </div>
 </body>
 </html>
