@@ -55,6 +55,10 @@ input{
     padding-left: 4px;
 }
 
+#location-inp{
+    text-transform: capitalize;
+}
+
 button.submit{
     margin-top: 10px;
     height: 30px;

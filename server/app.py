@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request,jsonify
 import numpy as np
 import util
 
@@ -7,12 +7,9 @@ app = Flask(__name__)
 
 @app.route('/get-locations', methods=['GET'])
 def get_locations():
-    return util._locations
-
-
-@app.route('/get-types', methods=['GET'])
-def get_types():
-    return util._types
+    response = jsonify({'locations':util._locations})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 @app.route('/predict', methods=['POST'])
@@ -21,12 +18,14 @@ def predict():
     x[0] = request.form.get('area')
     x[1] = request.form.get('furnishing')
     x[2] = request.form.get('bhk')
-    location = 'location_'+request.form.get('location')
+    location = 'location_'+request.form.get('location').lower()
     x[util._columns.index(location)] = 1
-    type_ = 'type_'+request.form.get('type')
+    type_ = 'type_'+request.form.get('type').lower()
     x[util._columns.index(type_)] = 1
     y = util._model.predict([x])
-    return {"price" : float(y[0])}
+    response = jsonify({"price" : round(float(y[0]),2)})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 if __name__ == "__main__":

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Price Predictor - Kolkata</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="img"></div>
@@ -19,11 +21,11 @@
         </div>
         <div class="query">
             <label for="furnishing">Furnishing:</label>
-            <select name="furnishing" id="furnishing">
-                <option value="" selected disabled hidden>Please select the Furnishing</option>
-                <option value="s">T</option>
-                <option value="x">A</option>
-                <option value="y">H</option>
+            <select name="furnishing" id="furnishing-inp">
+                <option value="" selected disabled hidden>Please Select The Furnishing</option>
+                <option value="0">Unfurnished</option>
+                <option value="1">Semi-Furnished</option>
+                <option value="2">Fully-Furnished</option>
             </select>
         </div>
         <div class="query">
@@ -42,14 +44,14 @@
         <div class="query">
             <label for="type"> Type of House:</label>
             <select name="type" id="type-inp">
-                <option value="" selected disabled hidden>Please select the Type</option>
-                <option value="s">N</option>
-                <option value="x">p</option>
-                <option value="y">o</option>
+                <option value="" selected disabled hidden>Please Select The Type</option>
+                <option value="apartment">Apartment</option>
+                <option value="builder floor">Builder Floor</option>
+                <option value="house">House</option>
             </select>
         </div>
         
-        <button type="button" onclick="" class="submit">Submit</button>
+        <button type="button" onclick="onPredict()" class="submit">Predict</button>
     </form>
     <div class="prediction">
         <div id="price-label">Predicted Price</div>
